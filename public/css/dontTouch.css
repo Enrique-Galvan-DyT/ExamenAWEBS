@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'Mynecraft'; /* Nombre que le asignamos a nuestra fuente */
+    src: url('minecraftia/Minecraftia-Regular.ttf') format('truetype'); /* Ruta de la fuente y su formato */
+}
+/* Utiliza la fuente personalizada en tu selector */
+body {
+    font-family: 'Mynecraft', sans-serif; /* Utiliza nuestra fuente o una fuente sans-serif como respaldo */
+
+    .txt{
+        padding-top: 1rem;
+        letter-spacing: 2px;
+    }
+
+    input{
+        padding-top: 1rem !important;
+        line-height: normal !important;
+    }
+
+    #imagen-container{
+        img{
+            height: 25rem;
+            width: auto;
+            object-fit: contain;
+        }
+    }
+}
+
+*,ul{
+    margin: 0;
+    padding: 0;
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Ocultar completamente la barra de desplazamiento */
+}
+
+body > .main{
+    width: max-content;
+    background: hsla(0, 1%, 14%, 1);
+
+    background: linear-gradient(90deg, hsla(0, 1%, 14%, 1) 0%, hsla(0, 21%, 25%, 1) 6%, hsla(238, 13%, 48%, 1) 26%, hsla(221, 49%, 69%, 1) 48%, hsla(211, 100%, 82%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(0, 1%, 14%, 1) 0%, hsla(0, 21%, 25%, 1) 6%, hsla(238, 13%, 48%, 1) 26%, hsla(221, 49%, 69%, 1) 48%, hsla(211, 100%, 82%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(0, 1%, 14%, 1) 0%, hsla(0, 21%, 25%, 1) 6%, hsla(238, 13%, 48%, 1) 26%, hsla(221, 49%, 69%, 1) 48%, hsla(211, 100%, 82%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#232222", endColorstr="#4C3232", GradientType=1 );
+    
+}
+
+ul{
+    list-style: none;
+    width: max-content;
+    li{
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        box-shadow: inset 0px 0px 0px black;
+        &.identifier{
+            background-color: red;
+            opacity: 0.5;
+        }
+        &:hover{
+            box-shadow:  0px 1px 5px transparent;
+            position: relative;
+            transition: .1s ease box-shadow;
+            animation-name: hoverBlockAnimation;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+        }
+        &.select-this{
+            box-shadow: 0px 0px 1px 5px lime;
+            position: relative;
+            transition: .1s ease box-shadow;
+            animation-name: selectedBlockAnimation;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: .8s;
+        }
+        
+        &.empty-box{
+            transition: 1s ease box-shadow;
+            box-shadow: inset 0px 0px 15px black;
+        }
+    }
+
+}
+
+.info{
+    position: fixed;
+    top: 0;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    *{
+        margin: 0;
+        letter-spacing: 1px;
+        font-weight: lighter;
+    }
+    & .text{
+        background-color: rgb(0 0 0 / 50%);
+        margin: .5rem;
+        padding-inline: 1rem;
+        line-height: 0rem;
+        padding-top: 1rem;
+        height: auto;
+        width: max-content;
+    }
+
+    & .text >  h5{
+        font-size: small;
+    }
+}
+
+.menu{
+    position: fixed;
+    bottom: 0;
+    
+    :not(ul).item{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .pending{
+        filter: grayscale(1);
+    }
+    .map, .enchanted-book,.enchanted-scissors,.enchanted-compass,.small-chest,.enchanted-pickaxe, .potion{
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: .3s ease transform;
+        cursor: pointer;
+        
+        &.lets-cut{
+            animation-name: selectedCutAnimation;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+        }
+        &.lets-mine{
+            animation-name: selectedMineAnimation;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+        }
+        &:hover{
+            transform: scale(1.2);
+        }
+
+        
+    }
+}
+
+.modal{
+    .count{
+        position: relative;
+        top: 100%;
+        left: 50%;
+        text-shadow: 2px 1px 1px black, -1px 0px 0px slategray;
+        width: min-content;
+        line-height: 0;
+    }
+}
+
+/* Estilo de fuente para pantallas grandes */
+@media (min-width: 768px) {
+    .tooltip-inner {
+        font-size: 14px;
+    }
+}
+
+/* Estilo de fuente para teléfonos */
+@media (max-width: 767px) {
+    .tooltip-inner {
+        font-size: 48px;
+    }
+}
+
+  @keyframes hoverBlockAnimation {
+    from{
+        box-shadow: 0px 0px 1px 2px white;
+    }
+    to{
+        box-shadow: 0px 0px 1px 5px transparent;
+    }
+  }
+
+  @keyframes selectedBlockAnimation {
+    0%{
+        box-shadow: 0px 0px 1px 2px limegreen;
+    }
+    50%{
+        box-shadow: 0px 0px 1px 5px lime;
+    }
+    100%{
+        box-shadow: 0px 0px 1px 2px limegreen;
+    }
+  }
+
+  @keyframes selectedCutAnimation {
+    0%{
+        box-shadow: 0px 0px 1px 2px white;
+    }
+    50%{
+        box-shadow: 0px 0px 1px 5px yellow;
+    }
+    100%{
+        box-shadow: 0px 0px 1px 2px white;
+    }
+  }
+  @keyframes selectedMineAnimation {
+    0%{
+        box-shadow: 0px 0px 1px 2px white;
+    }
+    50%{
+        box-shadow: 0px 0px 1px 5px #29f0ff;
+    }
+    100%{
+        box-shadow: 0px 0px 1px 2px white;
+    }
+  }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="public/media/manzana-dorada-32.png">
+
+    <title>Examen</title>
+    <link rel="stylesheet" href="public/css/main.css">
+    <script src="public/js/jquery/dist/jquery.min.js"></script>
+    <script src="public/js/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="public/css/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="public/js/html2canvas/dist/html2canvas.min.js"></script>
+    <script src="public/js/dontTouch.js"></script>
+</head>
+<body>
+    <div class="main">
+        
+    </div>
+    <div class="info">
+        <div class="text d-flex align-items-center">
+            <h3 class="me-3">Player:</h3><small class="username fs-6 text-info">Waiting...</small>
+        </div>
+        <div>
+            <ul class="alerts"></ul>
+        </div>
+    </div>
+    
+    <div class="menu p-2 d-flex w-100">
+        <div class="p-2 bg-dark bg-gradient border border-3 rounded gap-4 d-flex flex-column position-absolute bottom-0 mb-4">
+            <div class="map item" onclick=""></div>
+            <div class="enchanted-compass item" data-bs-toggle="modal" data-bs-target="#usersPictures"></div>
+            <div class="small-chest item" data-bs-toggle="modal" data-bs-target="#usersItems"></div>
+            <div class="enchanted-pickaxe item"></div>
+            <div class="enchanted-scissors item"></div>
+        </div> 
+        <ul class="d-flex gap-4 ms-auto me-5 mt-auto mb-4">
+            <li class="p-3 bg-dark bg-gradient border border-3 rounded"><div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Consigue una manzana dorada." class="potion pending potion-healing item"></div></li>
+            <li class="p-3 bg-dark bg-gradient border border-3 rounded"><div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Consigue una esmeralda por cada aldeano." class="potion pending potion-invisibility item"></div></li>
+            <li class="p-3 bg-dark bg-gradient border border-3 rounded"><div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Aumenta la generación aleatoria de diamante, deben aparecer 15 al cargar el mapa." class="potion pending potion-luck item"></div></li>
+            <li class="p-3 bg-dark bg-gradient border border-3 rounded"><div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Muestra los nombres de bloques al pasar el mouse." class="potion pending potion-night-vision item"></div></li>
+            <li class="p-3 bg-dark bg-gradient border border-3 rounded"><div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Habilita la selección de bloques." class="potion pending potion-poison item"></div></li>
+            <li class="p-3 bg-dark bg-gradient border border-3 rounded"><div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Consigue 5 minerales distintos." class="potion pending potion-slowness item"></div></li>
+            <li class="p-3 bg-dark bg-gradient border border-3 rounded"><div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Consigue 5 de oro." class="potion pending potion-strength item"></div></li>
+        </ul>
+    </div>
+
+        <!-- Config -->
+        <div class="modal fade" id="config" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-secondary text-white">
+                        <h1 class="modal-title fs-5 txt">Pantalla principal</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="username" class="form-label txt">Username:</label>
+                            <input type="text" class="form-control mb-2" id="username">
+                            <div id="usernameHelp" class="form-text txt">Usuario que me ayudará a identificar tus avances.</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary txt saveUsername" data-bs-dismiss="modal">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Todos los jugadores -->
+        <div class="modal fade" id="usersPictures" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header bg-secondary text-white">
+                        <h1 class="modal-title fs-5 txt">Todos los jugadores</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="imagen-container" class="d-flex gap-3 flex-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Todos los items -->
+        <div class="modal fade" id="usersItems" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header bg-secondary text-white">
+                        <h1 class="modal-title fs-5 txt">Items obtenidos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="d-flex flex-wrap p-1 w-100 gap-3 justify-content-around">
+                            <li class="coal"><div class="bg-dark text-white fs-5 count">0</div></li>
+                            <li class="iron"><div class="bg-dark text-white fs-5 count">0</div></li>
+                            <li class="gold"><div class="bg-dark text-white fs-5 count">0</div></li>
+                            <li class="diamond"><div class="bg-dark text-white fs-5 count">0</div></li>
+                            <li class="redstone"><div class="bg-dark text-white fs-5 count">0</div></li>
+                            <li class="lapiz"><div class="bg-dark text-white fs-5 count">0</div></li>
+                            <li class="emerald"><div class="bg-dark text-white fs-5 count">0</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="public/js/init.js"></script>
+    
+</body>
+</html>
