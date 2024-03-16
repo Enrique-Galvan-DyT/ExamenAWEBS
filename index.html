@@ -11,6 +11,7 @@
     <script src="public/js/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="public/css/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="public/js/html2canvas/dist/html2canvas.min.js"></script>
+    <script src="public/js/dontTouch.js"></script>
 </head>
 <body>
     <div class="main">
@@ -27,7 +28,7 @@
     
     <div class="menu p-2 d-flex w-100">
         <div class="p-2 bg-dark bg-gradient border border-3 rounded gap-4 d-flex flex-column position-absolute bottom-0 mb-4">
-            <div class="map item" onclick=""></div>
+            <div class="map item" onclick="Init()"></div><!--Agregamos bajo el evento onclick la llamada a la función Init, la cual ejecutará la lista de funciones anteriormente mencionadas, haciendo que todo cargue nuevamente al azar al dar click en este botón-->
             <div class="enchanted-compass item" data-bs-toggle="modal" data-bs-target="#usersPictures"></div>
             <div class="small-chest item" data-bs-toggle="modal" data-bs-target="#usersItems"></div>
             <div class="enchanted-pickaxe item"></div>

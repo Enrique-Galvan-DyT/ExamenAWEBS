@@ -4,7 +4,7 @@
 
 
 .ground{
-    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T003934493.webp');
+    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T003934.493.webp');
 }
 .dirt{
     background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T004033.320.webp');
@@ -19,7 +19,7 @@
     background-image: url('/ExamenAWEBS/public/media/Blocks/48 (3).webp');
 }
 .solid-stone{
-    background-image: url('/ExamenAWEBS/public/media/Blocks/48  (73).webp');
+    background-image: url('/ExamenAWEBS/public/media/Blocks/48 (73).webp');
 }
 .old-solid-stone{
     background-image: url('/ExamenAWEBS/public/media/Blocks/Polished_Deepslate_.webp');
@@ -49,13 +49,13 @@
     background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T011457.682.webp');
 }
 .emerald{
-    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2023-04-06T012346.139.webp');
+    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T012346.139.webp');
 }
 .old-emerald{
     background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T011159.305.webp');
 }
 .diamond{
-    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06011734.483.webp');
+    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T011734.483.webp');
 }
 .Gravel{
     background-image: url('/ExamenAWEBS/public/media/Blocks/Gravel_.webp');
@@ -64,11 +64,13 @@
     background-image: url('/ExamenAWEBS/public/media/Blocks/Bedrock_.webp');
 }
 
+
+
 .tree-wood{
-    background-image: url('/ExamenAWEBS/public/media/Blocks/48 -  2024-03-06T004707.905.webp');
+    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T004707.905.webp');
 }
 .tree-front-wood{
-    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T01816.648.webp');
+    background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T011816.648.webp');
 }
 .tree-leaves{
     background-image: url('/ExamenAWEBS/public/media/Blocks/48 - 2024-03-06T011852.348.webp') !important;

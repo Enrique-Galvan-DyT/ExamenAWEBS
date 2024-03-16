@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.username').innerText = userName;
         
         // Ejecutar la función cada 5 segundos
-        setInterval(capturarYEnviar, 5000);
-        setInterval(cargarImagenesRecientes, 6000);
+        //setInterval(capturarYEnviar, 15000);
+        //setInterval(cargarImagenesRecientes, 20000);
     })
 
     document.querySelector('.enchanted-scissors').addEventListener('click', function () {

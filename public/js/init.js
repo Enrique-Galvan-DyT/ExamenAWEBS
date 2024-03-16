@@ -1,11 +1,10 @@
 
-let columns = 20;
+let columns = 50;
 const rows = 100;
 
 
 // Función para crear un <ul> con 50 <li> elementos
 function crearLista() {
-    //array_trees = generarNumerosAleatorios((numeroAleatorio() * 100))
     // Crear 100 listas y agregarlas al contenedor
     const contenedor = document.querySelector('.main');
     contenedor.innerHTML = "";
@@ -19,6 +18,7 @@ function crearLista() {
             assignBlockClass(li, i, j)    
             ul.appendChild(li);
             
+            addEvent(li)//Se añade el evento de clic para todo elemento que se vaya generando, una vez se va cargando su información, se habilitará su evento de tipo click. Dependiendo otros factores, se determinará qué sucederá al hacer click, si permitir el intercambio de bloques, usar pico o tijeras.
         }
         contenedor.appendChild(ul);
     }
@@ -42,7 +42,6 @@ function crearLista() {
     array_trees = []
     array_plants = []
 }
-
 
 function assignBlockClass(li, i, j){
 
@@ -268,5 +267,8 @@ function loadBlockNames() {
 }
 
 function Init(){
-    crearLista()
+    crearLista()//Primero debemos crear toda la estructura de filas y columnas, al mismo tiempo, dependiendo por rangos de filas establecidos, habrá probabilidad de generar ciertos elementos de forma aleatoria
+    loadBlockNames()//Una vez que todos los elementos han sido creados, y que contienen clases, se tomará la información de sus clases para asignarles un tooltip como nombre desplegable, eliminando los guines de los textos de la clase para reeplazarlos por espacios y tener nombres limpios, al final cargaremos esos tooltips con la función específica de bootstrap, ya que añadir el atributo no es necesario, hará falta inicializarlos
+    checkEmeraldsPerVillager()//Cuando se hayan cargado los elementos del mapa, se verificará que la cantidad de esmeraldas sea igual o mayor a la cantidad de aldeanos generados
+    checkDiamondsPerMap()//Se hará un conteo de los minerales generados en el mapa para corroborar que se haya alcanzado la cantidad deseada una vez aumentada su probabilidad
 }
