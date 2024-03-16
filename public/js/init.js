@@ -1,5 +1,5 @@
 
-let columns = 50;
+let columns = 20;
 const rows = 100;
 
 
